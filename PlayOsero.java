@@ -1,9 +1,21 @@
-// 繧ｪ繧ｻ繝ｭ
-public class OseroMain {
+// オセロをプレイするプログラム
+public class PlayOsero {
     public static void main(String[] args) {
-	//System.out.print("Hello");
 	GameOsero game = new GameOsero();
-	/* 確認用
+	game.startGame();    // 盤面の初期化
+	while(game.putable() == true) {  // 駒が置くことができるか 
+	    game.show();                 // 毎ターン盤面を表示する
+	    game.turn();                 // 毎ターンの処理
+	}
+	
+	//確認用
+	/*
+	while(true) {
+	    game.show();
+	    game.turn();
+	}
+	//System.out.println();
+
 	Board b = new Board();
 	  int x,y,num;
 	  int i = 0;
@@ -16,9 +28,6 @@ public class OseroMain {
 	  }
 	  }
 	*/
-	game.start();    // 初期盤面をつくる
-	game.show();
-	//System.out.println();
     }
 }
 
